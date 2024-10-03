@@ -1,0 +1,33 @@
+.form {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.search {
+    width: 300px;
+    outline: none;
+    border: 2px solid #aaaaaa;
+    border-radius: 10px;
+    padding: 10px 40px 10px 10px;
+}
+
+.search:hover,
+.search:focus {
+    border-color: #555555;
+}
+
+.search-btn {
+    position: absolute;
+    right: 5px;
+    color: #555555;
+    display: none;
+    background-color: #fff;
+    border: none;
+}
+
+.search:focus +
+.search-btn {
+    display: flex;
+}

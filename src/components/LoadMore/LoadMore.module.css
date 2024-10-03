@@ -1,0 +1,18 @@
+.more-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #aaaaaa;
+    border: none;
+    border-radius: 10px;
+    width: 100px;
+}
+
+.more-btn:hover,
+.more-btn:focus {
+    background-color: #555555;
+}
+
+.more-icon {
+    color: #ffffff;
+}
