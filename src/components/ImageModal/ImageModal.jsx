@@ -1,21 +1,26 @@
 import css from './ImageModal.module.css';
 
-const ImageModal = ({ alt, src, closeModal }) => {
-  if (!src) {
-    return null;
-  }
+import ReactModal from 'react-modal';
 
+ReactModal.setAppElement('#root');
+
+const ImageModal = ({ alt, src, closeModal }) => {
   return (
-    <div className={css['modal-overlay']} onClick={closeModal}>
-      <div
-        className={css['modal-content']}
+    <ReactModal
+      isOpen={!!src}
+      onRequestClose={closeModal}
+      overlayClassName={css['modal-overlay']}
+      className={css['modal-content']}
+    >
+      <img
+        src={src}
+        alt={alt}
+        className={css['modal-image']}
         onClick={e => {
-          e.stopPropagation();
+          e.stopPropagation(); // Prevent closing when clicking inside the modal content
         }}
-      >
-        <img src={src} alt={alt} className={css['modal-image']} />
-      </div>
-    </div>
+      />
+    </ReactModal>
   );
 };
 

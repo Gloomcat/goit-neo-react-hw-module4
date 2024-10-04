@@ -19,13 +19,7 @@ const SearchBar = ({ handleSubmit }) => {
           placeholder="Search images and photos"
           name="search"
         />
-        <button
-          type="submit"
-          className={css['search-btn']}
-          onClick={() => {
-            console.log('click');
-          }}
-        >
+        <button type="submit" className={css['search-btn']}>
           <IoIosSearch size={22} />
           Search
         </button>

@@ -25,7 +25,6 @@ const App = () => {
 
   const [error, setError] = useState('');
 
-  const [modalOpen, setModalOpen] = useState(false);
   const [modalSrc, setModalSrc] = useState('');
   const [modalAlt, setModalAlt] = useState('');
 
@@ -93,13 +92,11 @@ const App = () => {
   };
 
   const openModal = (src, alt) => {
-    setModalOpen(true);
     setModalSrc(src);
     setModalAlt(alt);
   };
 
   const closeModal = () => {
-    setModalOpen(false);
     setModalSrc('');
     setModalAlt('');
   };
@@ -127,9 +124,7 @@ const App = () => {
       )}
       {isLoading && <Loader />}
       {error && <ErrorMessage error={error} />}
-      {modalOpen && (
-        <ImageModal alt={modalAlt} src={modalSrc} closeModal={closeModal} />
-      )}
+      <ImageModal alt={modalAlt} src={modalSrc} closeModal={closeModal} />
     </div>
   );
 };
