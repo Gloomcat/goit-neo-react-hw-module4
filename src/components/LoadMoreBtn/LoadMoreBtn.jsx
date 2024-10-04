@@ -1,8 +1,8 @@
-import css from './LoadMore.module.css';
+import css from './LoadMoreBtn.module.css';
 
 import { MdExpandMore } from 'react-icons/md';
 
-const LoadMore = ({ handleLoadMore }) => {
+const LoadMoreBtn = ({ handleLoadMore }) => {
   return (
     <button className={css['more-btn']} type="button" onClick={handleLoadMore}>
       <MdExpandMore className={css['more-icon']} size={32} />
@@ -10,4 +10,4 @@ const LoadMore = ({ handleLoadMore }) => {
   );
 };
 
-export default LoadMore;
+export default LoadMoreBtn;

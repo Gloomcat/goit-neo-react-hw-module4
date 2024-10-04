@@ -1,8 +1,14 @@
 import css from './ImageCard.module.css';
 
-const ImageCard = ({ alt, small, regular }) => {
+const ImageCard = ({ alt, small, regular, openModal }) => {
   return (
-    <div>
+    <a
+      href="#"
+      onClick={event => {
+        event.preventDefault();
+        openModal(regular, alt);
+      }}
+    >
       <img
         className={css.card}
         src={small}
@@ -10,7 +16,7 @@ const ImageCard = ({ alt, small, regular }) => {
         width={320}
         height={240}
       ></img>
-    </div>
+    </a>
   );
 };
 
