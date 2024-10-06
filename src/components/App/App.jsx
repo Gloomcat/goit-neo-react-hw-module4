@@ -52,8 +52,8 @@ const App = () => {
         }
 
         setIsLoading(false);
-        setTotalPages(Math.ceil(response.headers['x-total'] / perPage));
-        setImages(prevImages => [...prevImages, ...response.data]);
+        setTotalPages(response.data.total_pages);
+        setImages(prevImages => [...prevImages, ...response.data.results]);
       } catch (error) {
         setError(error.message);
       } finally {

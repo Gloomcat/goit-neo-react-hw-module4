@@ -14,7 +14,7 @@ export const fetchPhotos = async ({ query, page, perPage }) => {
     },
   };
 
-  return axios.get('/photos', config);
+  return axios.get('/search/photos', config);
 };
 
 export default fetchPhotos;
